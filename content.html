@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<title>Content</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body{
+  background:#0a192f;
+  color:#e6f1ff;
+}
+
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  background:#020c1b;
+}
+nav h2{color:#64ffda;font-weight:700;}
+nav div{display:flex;gap:10px;}
+nav button{
+  background:none;
+  border:1px solid #64ffda;
+  color:#64ffda;
+  padding:8px 15px;
+  border-radius:6px;
+  cursor:pointer;
+}
+nav button:hover{
+  background:#64ffda;
+  color:#020c1b;
+}
+
+/* TEXT */
+h1{
+  font-size:2.5em;
+  text-shadow:0 0 10px rgba(100,255,218,0.3);
+}
+h2{color:#64ffda;margin-top:20px;}
+p{line-height:1.7;}
+
+/* SECTION */
+.section{
+  padding:50px 20px;
+  text-align:center;
+}
+
+/* CARD */
+.card{
+  background:rgba(17,34,64,0.6);
+  padding:25px;
+  border-radius:15px;
+  margin:20px auto;
+  max-width:700px;
+  color:#8892b0;
+  border:1px solid rgba(100,255,218,0.2);
+  transition:0.3s;
+}
+.card:hover{
+  transform:translateY(-8px);
+}
+
+/* SIMULATION */
+.sim{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  margin:40px auto;
+  background:#64ffda;
+}
+
+/* STATS */
+.stats{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+.stat{
+  background:#112240;
+  padding:20px;
+  border-radius:10px;
+}
+
+/* BUTTON */
+.cta{
+  margin-top:20px;
+  padding:12px 25px;
+  border:none;
+  border-radius:6px;
+  background:#64ffda;
+  color:#020c1b;
+  cursor:pointer;
+}
+
+/* GRAPH */
+canvas{
+  margin-top:20px;
+}
+
+/* REVEAL */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h2>CleanWater</h2>
+<div>
+<button onclick="location.href='index.html'">Home</button>
+<button onclick="location.href='creator.html'">Creator</button>
+</div>
+</nav>
+
+<div class="section reveal">
+
+<h1>Protect Our <span style="color:#64ffda;">Water</span></h1>
+<p style="color:#64ffda;font-weight:600;">
+Clean water is not a luxury — it's a right.
+</p>
+
+<div class="card">
+<p>
+Sewage is wastewater from homes, toilets, and factories that contains harmful bacteria and chemicals.
+When it is released into rivers or oceans without proper treatment, it spreads disease, kills aquatic life,
+and pollutes our drinking water.
+</p>
+</div>
+
+<h2>Simulation</h2>
+<div id="water" class="sim"></div>
+<button class="cta" onclick="pollute()">Pollute Water</button>
+
+<div class="stats">
+<div class="stat"><h3>80%</h3><p>Untreated</p></div>
+<div class="stat"><h3>2M+</h3><p>Deaths/year</p></div>
+<div class="stat"><h3>50%</h3><p>Water polluted</p></div>
+</div>
+
+<h2>Sewage Pollution in Indonesia 🇮🇩</h2>
+
+<div class="card">
+<p>
+Indonesia faces serious wastewater challenges. Compared to the global average, 
+a much larger percentage of wastewater is discharged untreated, increasing risks 
+to health, rivers, and marine ecosystems.
+</p>
+</div>
+
+<div class="card">
+<h3 style="color:#64ffda;">Indonesia vs Global Wastewater Treatment</h3>
+<canvas id="indoChart"></canvas>
+</div>
+
+<div class="stats">
+  <div class="stat">
+    <h3 class="count" data-target="80">0</h3>
+    <p>% Untreated (Indonesia)</p>
+  </div>
+  <div class="stat">
+    <h3 class="count" data-target="44">0</h3>
+    <p>% Untreated (Global Avg)</p>
+  </div>
+  <div class="stat">
+    <h3 class="count" data-target="70">0</h3>
+    <p>% Rivers Polluted</p>
+  </div>
+</div>
+
+<div class="card">
+<p>
+⚠️ Indonesia's untreated wastewater levels are significantly higher than the global average.<br><br>
+🏙️ Rapid urbanization and limited sanitation infrastructure worsen the issue.<br><br>
+💧 Improving sewage systems is critical to protect public health and water ecosystems.
+</p>
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Watch & Learn</h2>
+
+<div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:20px;">
+
+  <!-- VIDEO -->
+  <iframe width="500" height="300"
+  src="https://www.youtube.com/embed/1HYR3RkWmQE"
+  allowfullscreen>
+  </iframe>
+
+<div style="position:relative; width:500px; height:300px; border-radius:12px; overflow:hidden;">
+
+  <img src="https://via.placeholder.com/500x300?text=Open+PDF"
+  style="width:100%; height:100%; object-fit:cover;">
+
+  <button class="cta" 
+  style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"
+  onclick="window.open('https://canva.link/qhwy2zlcozp6lfn','_blank')">
+    ▶ Open Resource
+  </button>
+
+</div>
+
+</div>
+
+<!-- CAMPAIGN GOAL -->
+<div class="section">
+
+<h1>Our Goal 🎯</h1>
+
+<div class="card">
+<p>
+Our campaign aims to reduce untreated wastewater in Indonesia by raising awareness,
+encouraging responsible waste disposal, and supporting better sanitation systems.
+We want cleaner rivers, healthier communities, and a safer environment for future generations.
+</p>
+</div>
+
+<h2>How We Achieve It</h2>
+
+<div class="card">
+<p><strong>Step 1: Awareness 📢</strong><br>
+Educate people about the dangers of sewage pollution through social media, schools, and campaigns.</p>
+</div>
+
+<div class="card">
+<p><strong>Step 2: Community Action 🤝</strong><br>
+Encourage communities to participate in clean-up events and protect local water sources.</p>
+</div>
+
+<div class="card">
+<p><strong>Step 3: Better Habits 🚿</strong><br>
+Promote proper waste disposal and reduce harmful chemicals going into drains.</p>
+</div>
+
+<div class="card">
+<p><strong>Step 4: Support Solutions 🏗️</strong><br>
+Advocate for improved sewage treatment systems and infrastructure development.</p>
+</div>
+
+</div>
+
+<!-- CAMPAIGN -->
+<div class="section">
+<h1>Join the Movement</h1>
+<div class="card">
+<p>Help protect our water.</p>
+<button class="cta" onclick="joinCampaign()">Join Campaign</button>
+<p id="joinMsg"></p>
+</div>
+</div>
+
+<!-- CHART LIBRARY -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+// GRAPH
+const ctx = document.getElementById('indoChart');
+
+new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ['Untreated', 'Treated'],
+    datasets: [{
+      data: [80, 20],
+      backgroundColor: ['#3b5323', '#64ffda']
+    }]
+  },
+  options: {
+    plugins: {
+      legend: {
+        labels: { color: '#e6f1ff' }
+      }
+    }
+  }
+});
+
+// SIMULATION
+function pollute(){
+let water=document.getElementById("water");
+water.style.background="linear-gradient(to bottom, #3b5323, #1e2d16)";
+water.style.boxShadow="inset 0 0 20px rgba(0,0,0,0.5)";
+}
+
+// JOIN
+function joinCampaign(){
+document.getElementById("joinMsg").innerText=
+"🌊 Thank you for joining!";
+}
+
+// SCROLL
+window.addEventListener('scroll',()=>{
+document.querySelectorAll('.reveal').forEach(el=>{
+if(el.getBoundingClientRect().top<window.innerHeight-80)
+el.classList.add('active');
+});
+});
+window.dispatchEvent(new Event('scroll'));
+</script>
+
+</body>
+</html>

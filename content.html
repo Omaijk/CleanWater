@@ -45,6 +45,20 @@ nav button:hover{
   color:#020c1b;
 }
 
+.media-box{
+  width:500px;
+  height:300px;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 0 15px rgba(100,255,218,0.2);
+}
+
+.media-box iframe{
+  width:100%;
+  height:100%;
+  border:none;
+}
+
 /* TEXT */
 h1{
   font-size:2.5em;
@@ -112,6 +126,17 @@ canvas{
   margin-top:20px;
 }
 
+/* PDF STYLE 🔥 */
+.pdf-container{
+  width:90%;
+  max-width:900px;
+  height:600px;
+  margin:auto;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 0 15px rgba(100,255,218,0.2);
+}
+
 /* REVEAL */
 .reveal{
   opacity:0;
@@ -171,7 +196,7 @@ to health, rivers, and marine ecosystems.
 </div>
 
 <div class="card">
-<h3 style="color:#64ffda;">Indonesia vs Global Wastewater Treatment</h3>
+<h3 style="color:#effffb;">Indonesia vs Global Wastewater Treatment</h3>
 <canvas id="indoChart"></canvas>
 </div>
 
@@ -207,23 +232,23 @@ to health, rivers, and marine ecosystems.
 <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:20px;">
 
   <!-- VIDEO -->
-  <iframe width="500" height="300"
-  src="https://www.youtube.com/embed/1HYR3RkWmQE"
-  allowfullscreen>
+  <div class="media-box">
+    <iframe 
+      src="https://www.youtube.com/embed/1HYR3RkWmQE"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- PDF EMBED 🔥 -->
+  <div class="media-box">
+<div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https://www.canva.com/design/DAHFlRng0dQ/In8Eh5CTNBhJQhS6aM2BBA/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
   </iframe>
-
-<div style="position:relative; width:500px; height:300px; border-radius:12px; overflow:hidden;">
-
-  <img src="https://via.placeholder.com/500x300?text=Open+PDF"
-  style="width:100%; height:100%; object-fit:cover;">
-
-  <button class="cta" 
-  style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"
-  onclick="window.open('https://canva.link/qhwy2zlcozp6lfn','_blank')">
-    ▶ Open Resource
-  </button>
-
 </div>
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAHFlRng0dQ&#x2F;In8Eh5CTNBhJQhS6aM2BBA&#x2F;view?utm_content=DAHFlRng0dQ&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Protect Our Water</a> by jocelyn.mg
 
 </div>
 
